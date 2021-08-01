@@ -1,4 +1,6 @@
-var xoff = 0;
+var xoff1 = 0;
+var xoff2 = 10000;
+
 function setup() {
     createCanvas(600, 600);
 }
@@ -6,8 +8,12 @@ function setup() {
 function draw() {
     background(51);
     //var x = random(width);
-    var x = map(noise(xoff), 0, 1, 0 , width);
+    var x = map(noise(xoff1), 0, 1, 0 , width);
+    var y = map(noise(xoff2), 0, 1, 0 , height);
+
     
-    ellipse(x, 300, 24, 24);
-    xoff += 0.01;
+    ellipse(x, y, 24, 24);
+    xoff1 += 0.01;
+    xoff2 += 0.01;
+  
 }
